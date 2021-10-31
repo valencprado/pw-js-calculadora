@@ -5,4 +5,4 @@ A ideia dessa atividade é criar uma calculadora funcional, utilizando funções
 
 A aparência da calculadora é essa.
 
-![C:\Users\valen\Downloads\estrutura.png]
+
