@@ -57,35 +57,35 @@
             <input type="text" id="visor" class="form-control resultado" placeholder="0" disabled="disabled" />
             
             <div class="row">
-              <button type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
+              <button onclick="LimpaTela()" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
+              <button onclick="BotaNaTela('/')"type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
+              <button onclick="BotaNaTela('*')"type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
             </div>
 
             <div class="row">
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
+              <button onclick="BotaNaTela(7)" type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
+              <button onclick="BotaNaTela(8)"type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
+              <button onclick="BotaNaTela(9)" type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
+              <button onclick="BotaNaTela('-')" type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
             </div>
             
             <div class="row">
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
+              <button onclick="BotaNaTela(4)"type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
+              <button onclick="BotaNaTela(5)"type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
+              <button onclick="BotaNaTela(6)"type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
+              <button onclick="BotaNaTela('+')" type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
             </div>
 
             <div class="row">
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
-              <button type="button" class="btn btn-dark btn-lg enter">=</button>
+              <button onclick="BotaNaTela(1)"type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
+              <button onclick="BotaNaTela(2)"type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
+              <button onclick="BotaNaTela(3)"type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
+              <button onclick="Calcula()" type="button" class="btn btn-dark btn-lg enter">=</button>
             </div>
 
             <div class="row" style="margin-top: -60px">
-              <button type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
-              <button type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
+              <button onclick="BotaNaTela(0)"type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
+              <button onclick="BotaNaTela('.')"type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
             </div>
 
           </div>
@@ -93,7 +93,26 @@
       </div>
     </div> 
 
+<script>
+   const visor = document.getElementById("visor");
+   console.log(visor);
+function BotaNaTela(valor){
+  //se o valor = 0, o valor do visor é igual ao valor inserido 👏👏 senão, o valor do visor é igual o valor do visor + o inserido 👏👏
+  if(visor.value==0){ 
+    visor.value = valor;
+  }
+  else{ 
+     visor.value += valor;
+}
+}
+function LimpaTela(){
+  visor.value = 0;
+}
+function Calcula(){
+  visor.value = eval(visor.value)
 
+}
+</script>
 
   </body>	
 
